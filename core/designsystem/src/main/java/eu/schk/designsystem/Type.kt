@@ -1,4 +1,4 @@
-package eu.schk.spezi.ui.theme
+package eu.schk.designsystem
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

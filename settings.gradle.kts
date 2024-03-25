@@ -21,4 +21,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "Spezi"
 include(":app")
- 
+include(":spezi-feature:login")
+include(":spezi-feature:contact")
+include(":core:designsystem")
+include(":spezi-feature:chart")

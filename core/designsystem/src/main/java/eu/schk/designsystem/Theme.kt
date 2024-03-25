@@ -1,4 +1,4 @@
-package eu.schk.spezi.ui.theme
+package eu.schk.designsystem
 
 import android.app.Activity
 import android.os.Build
