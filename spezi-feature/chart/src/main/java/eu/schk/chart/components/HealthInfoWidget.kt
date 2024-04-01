@@ -1,6 +1,7 @@
 package eu.schk.chart.components
 
 import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -33,6 +34,7 @@ import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
 @Composable
+@OptIn(ExperimentalFoundationApi::class)
 fun HealthInfoWidget(healthInfoModel: HealthInfoModel, modifier: Modifier = Modifier) {
     val maxRate = healthInfoModel.valueReadings.maxByOrNull { it.second }?.second ?: 140
     val minRate = healthInfoModel.valueReadings.minByOrNull { it.second }?.second ?: 60
