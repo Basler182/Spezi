@@ -9,6 +9,17 @@ fun isServiceUUIDInOmronServices(serviceUUID: UUID): Boolean {
     return omronServiceMap.containsKey(serviceUUID)
 }
 
+fun getOmronDescriptorNameByUUID(descriptorUUID: UUID): String? {
+    return OmronDescriptors.entries.firstOrNull { it.uuid == descriptorUUID }?.descriptorName
+}
+
+fun getOmronServiceNameByDescriptorUUID(descriptorUUID: UUID): String? {
+    return OmronService.entries.firstOrNull { service ->
+        service.descriptors.any { it.uuid == descriptorUUID }
+    }?.serviceName
+}
+
+
 enum class OmronDescriptors(val uuid: UUID, val descriptorName: String) {
     MODEL_NUMBER_CHARACTERISTICS(
         UUID.fromString("00002a24-0000-1000-8000-00805f9b34fb"),
