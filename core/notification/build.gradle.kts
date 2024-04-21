@@ -1,6 +1,31 @@
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    id("maven-publish")
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+                from(components["release"])
+                groupId = "eu.schk.notification"
+                artifactId = "notification"
+                version = "1.0.0"
+
+                pom {
+                    name.set("Notification")
+                    description.set("Notification")
+                    licenses {
+                        license {
+                            name.set("MIT License")
+                            url.set("https://opensource.org/licenses/MIT")
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 android {
@@ -33,6 +58,8 @@ android {
 }
 
 dependencies {
+
+    implementation("com.github.Basler182:Spezi:d17677b064")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

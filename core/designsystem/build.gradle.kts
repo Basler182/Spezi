@@ -12,6 +12,17 @@ afterEvaluate {
                 groupId = "eu.schk.designsystem"
                 artifactId = "designsystem"
                 version = "1.0.0"
+
+                pom {
+                    name.set("Design System")
+                    description.set("Design System")
+                    licenses {
+                        license {
+                            name.set("MIT License")
+                            url.set("https://opensource.org/licenses/MIT")
+                        }
+                    }
+                }
             }
         }
     }
